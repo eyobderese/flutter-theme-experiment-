@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:theme_experiment/common_wedget/bottom_nav_bar.dart';
+
 import 'package:theme_experiment/theme/theme.dart';
 
 void main() {
@@ -124,7 +126,10 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
+
+      bottomNavigationBar:
+          BottomNavigationWidget(), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
