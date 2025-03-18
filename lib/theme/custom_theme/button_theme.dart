@@ -26,8 +26,10 @@ class BButton {
             borderRadius: BorderRadius.circular(8.0), // Border radius
           ),
           backgroundColor:
-              CColor.lightColorScheme.primary, // Normal background color
-          foregroundColor: CColor.lightColorScheme.onSurface, // Text color
+              CColor
+                  .lightColorScheme
+                  .surfaceContainer, // Normal background color
+          foregroundColor: CColor.lightColorScheme.onPrimary, // Text color
           // Add hover color by modifying the overlayColor
           overlayColor: CColor.lightColorScheme.secondary, // Hover color
           padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),

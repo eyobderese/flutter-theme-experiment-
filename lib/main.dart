@@ -119,6 +119,15 @@ class _MyHomePageState extends State<MyHomePage> {
             IconButton(onPressed: () {}, icon: Icon(Icons.mic)),
             SizedBox(height: 12),
             TextButton(onPressed: () {}, child: Text("Eyob")),
+
+            SizedBox(height: 12),
+            Card(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text("This is a card"),
+              ),
+              // color: Theme.of(context).colorScheme.primary,
+            ),
           ],
         ),
       ),
