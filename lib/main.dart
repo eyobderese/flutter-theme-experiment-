@@ -142,6 +142,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   "Subscribe",
                   style: TextStyle(
                     color: Theme.of(context).colorScheme.onPrimary,
+
                     fontFamily: "Roboto",
                   ),
                 ),
