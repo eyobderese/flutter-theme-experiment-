@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:theme_experiment/common_wedget/bottom_nav_bar.dart';
+import 'package:theme_experiment/common_wedget/category.dart';
+import 'package:theme_experiment/common_wedget/search_bar.dart';
+import 'package:theme_experiment/common_wedget/tag.dart';
 
 import 'package:theme_experiment/theme/theme.dart';
 
@@ -80,76 +83,71 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text('You have pushed the button this many times:'),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+        child: SingleChildScrollView(
+          child: Column(
+            // Column is also a layout widget. It takes a list of children and
+            // arranges them vertically. By default, it sizes itself to fit its
+            // children horizontally, and tries to be as tall as its parent.
+            //
+            // Column has various properties to control how it sizes itself and
+            // how it positions its children. Here we use mainAxisAlignment to
+            // center the children vertically; the main axis here is the vertical
+            // axis because Columns are vertical (the cross axis would be
+            // horizontal).
+            //
+            // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
+            // action in the IDE, or press "p" in the console), to see the
+            // wireframe for each widget.
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              const Text('You have pushed the button this many times:'),
+              Text(
+                '$_counter',
+                style: Theme.of(context).textTheme.headlineMedium,
+              ),
 
-            ElevatedButton(
-              onPressed: () {
-                // Action when the button is pressed.
-                ScaffoldMessenger.of(
-                  context,
-                ).showSnackBar(SnackBar(content: Text("Button Pressed!")));
-              },
-              child: Text("Press Me"),
-            ),
+              ElevatedButton(
+                onPressed: () {
+                  // Action when the button is pressed.
+                  ScaffoldMessenger.of(
+                    context,
+                  ).showSnackBar(SnackBar(content: Text("Button Pressed!")));
+                },
+                child: Text("Press Me"),
+              ),
 
-            TextButton(onPressed: () {}, child: Text("Subscribe")),
-            OutlinedButton(onPressed: () {}, child: Text("Subscribe")),
+              TextButton(onPressed: () {}, child: Text("Subscribe")),
+              OutlinedButton(onPressed: () {}, child: Text("Subscribe")),
 
-            SizedBox(height: 10),
-            IconButton(onPressed: () {}, icon: Icon(Icons.mic)),
-            SizedBox(height: 12),
-            TextButton(onPressed: () {}, child: Text("Eyob")),
+              SizedBox(height: 10),
+              IconButton(onPressed: () {}, icon: Icon(Icons.mic)),
+              SizedBox(height: 12),
+              TextButton(onPressed: () {}, child: Text("Eyob")),
 
-            SizedBox(height: 12),
-            Card(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  "Subscribe",
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.onPrimary,
-                    fontFamily: "EuclidCircularB",
+              SizedBox(height: 12),
+              Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Column(children: [Tag(name: "Technology")]),
+                ),
+              ),
+
+              Category(name: "Technology"),
+
+              IconButton(onPressed: () {}, icon: Icon(Icons.add)),
+
+              Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Column(
+                    children: [
+                      SearchBarWidget(controller: TextEditingController()),
+                    ],
                   ),
                 ),
               ),
-              // color: Theme.of(context).colorScheme.primary,
-            ),
-
-            Card(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  "Subscribe",
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.onPrimary,
-
-                    fontFamily: "Roboto",
-                  ),
-                ),
-              ),
-              // color: Theme.of(context).colorScheme.primary,
-            ),
-          ],
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
