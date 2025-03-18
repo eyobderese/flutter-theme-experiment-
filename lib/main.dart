@@ -124,7 +124,27 @@ class _MyHomePageState extends State<MyHomePage> {
             Card(
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text("This is a card"),
+                child: Text(
+                  "Subscribe",
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.onPrimary,
+                    fontFamily: "EuclidCircularB",
+                  ),
+                ),
+              ),
+              // color: Theme.of(context).colorScheme.primary,
+            ),
+
+            Card(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  "Subscribe",
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.onPrimary,
+                    fontFamily: "Roboto",
+                  ),
+                ),
               ),
               // color: Theme.of(context).colorScheme.primary,
             ),
